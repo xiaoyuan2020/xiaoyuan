@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+xiaoyuan-m/.gitignore
+xiaoyuan-m/.mvn/
+xiaoyuan-m/mvnw
+xiaoyuan-m/mvnw.cmd
+xiaoyuan-m/src/test/
