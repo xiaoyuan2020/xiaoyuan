@@ -7,15 +7,15 @@ public class Classes {
 
     private String name;
 
-    private Integer schoolsid;
+    private Integer schoolsId;
 
-    private Integer schoolyear;
+    private Integer schoolYear;
 
     private Integer grade;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Integer createuid;
+    private Integer createId;
 
     public Integer getId() {
         return id;
@@ -33,20 +33,20 @@ public class Classes {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getSchoolsid() {
-        return schoolsid;
+    public Integer getSchoolsId() {
+        return schoolsId;
     }
 
-    public void setSchoolsid(Integer schoolsid) {
-        this.schoolsid = schoolsid;
+    public void setSchoolsId(Integer schoolsId) {
+        this.schoolsId = schoolsId;
     }
 
-    public Integer getSchoolyear() {
-        return schoolyear;
+    public Integer getSchoolYear() {
+        return schoolYear;
     }
 
-    public void setSchoolyear(Integer schoolyear) {
-        this.schoolyear = schoolyear;
+    public void setSchoolYear(Integer schoolYear) {
+        this.schoolYear = schoolYear;
     }
 
     public Integer getGrade() {
@@ -57,19 +57,19 @@ public class Classes {
         this.grade = grade;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getCreateuid() {
-        return createuid;
+    public Integer getCreateId() {
+        return createId;
     }
 
-    public void setCreateuid(Integer createuid) {
-        this.createuid = createuid;
+    public void setCreateId(Integer createId) {
+        this.createId = createId;
     }
 }

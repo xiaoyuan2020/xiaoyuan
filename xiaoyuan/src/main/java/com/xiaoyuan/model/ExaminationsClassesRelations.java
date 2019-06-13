@@ -3,9 +3,9 @@ package com.xiaoyuan.model;
 public class ExaminationsClassesRelations {
     private Integer id;
 
-    private Integer examinationsid;
+    private Integer examinationsId;
 
-    private Integer classid;
+    private Integer classesId;
 
     public Integer getId() {
         return id;
@@ -15,19 +15,19 @@ public class ExaminationsClassesRelations {
         this.id = id;
     }
 
-    public Integer getExaminationsid() {
-        return examinationsid;
+    public Integer getExaminationsId() {
+        return examinationsId;
     }
 
-    public void setExaminationsid(Integer examinationsid) {
-        this.examinationsid = examinationsid;
+    public void setExaminationsId(Integer examinationsId) {
+        this.examinationsId = examinationsId;
     }
 
-    public Integer getClassid() {
-        return classid;
+    public Integer getClassesId() {
+        return classesId;
     }
 
-    public void setClassid(Integer classid) {
-        this.classid = classid;
+    public void setClassesId(Integer classesId) {
+        this.classesId = classesId;
     }
 }

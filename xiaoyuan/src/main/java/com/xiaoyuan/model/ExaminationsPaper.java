@@ -3,15 +3,15 @@ package com.xiaoyuan.model;
 public class ExaminationsPaper {
     private Integer id;
 
-    private String papername;
+    private String paperName;
 
-    private Integer paperscore;
+    private Integer paperScore;
 
-    private Integer examinationsid;
+    private Integer examinationsId;
 
-    private Integer subjectsid;
+    private Integer subjectsId;
 
-    private String imageurl;
+    private String imageUrl;
 
     public Integer getId() {
         return id;
@@ -21,43 +21,43 @@ public class ExaminationsPaper {
         this.id = id;
     }
 
-    public String getPapername() {
-        return papername;
+    public String getPaperName() {
+        return paperName;
     }
 
-    public void setPapername(String papername) {
-        this.papername = papername == null ? null : papername.trim();
+    public void setPaperName(String paperName) {
+        this.paperName = paperName == null ? null : paperName.trim();
     }
 
-    public Integer getPaperscore() {
-        return paperscore;
+    public Integer getPaperScore() {
+        return paperScore;
     }
 
-    public void setPaperscore(Integer paperscore) {
-        this.paperscore = paperscore;
+    public void setPaperScore(Integer paperScore) {
+        this.paperScore = paperScore;
     }
 
-    public Integer getExaminationsid() {
-        return examinationsid;
+    public Integer getExaminationsId() {
+        return examinationsId;
     }
 
-    public void setExaminationsid(Integer examinationsid) {
-        this.examinationsid = examinationsid;
+    public void setExaminationsId(Integer examinationsId) {
+        this.examinationsId = examinationsId;
     }
 
-    public Integer getSubjectsid() {
-        return subjectsid;
+    public Integer getSubjectsId() {
+        return subjectsId;
     }
 
-    public void setSubjectsid(Integer subjectsid) {
-        this.subjectsid = subjectsid;
+    public void setSubjectsId(Integer subjectsId) {
+        this.subjectsId = subjectsId;
     }
 
-    public String getImageurl() {
-        return imageurl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl == null ? null : imageurl.trim();
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl == null ? null : imageUrl.trim();
     }
 }

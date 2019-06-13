@@ -2,105 +2,105 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xiaoyuan.mapper.ExaminationsPaperMapper" >
   <resultMap id="BaseResultMap" type="com.xiaoyuan.model.ExaminationsPaper" >
-    <id column="Id" property="id" jdbcType="INTEGER" />
-    <result column="PaperName" property="papername" jdbcType="VARCHAR" />
-    <result column="PaperScore" property="paperscore" jdbcType="INTEGER" />
-    <result column="ExaminationsId" property="examinationsid" jdbcType="INTEGER" />
-    <result column="SubjectsId" property="subjectsid" jdbcType="INTEGER" />
-    <result column="ImageUrl" property="imageurl" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="paper_name" property="paperName" jdbcType="VARCHAR" />
+    <result column="paper_score" property="paperScore" jdbcType="INTEGER" />
+    <result column="examinations_id" property="examinationsId" jdbcType="INTEGER" />
+    <result column="subjects_id" property="subjectsId" jdbcType="INTEGER" />
+    <result column="image_url" property="imageUrl" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, PaperName, PaperScore, ExaminationsId, SubjectsId, ImageUrl
+    id, paper_name, paper_score, examinations_id, subjects_id, image_url
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from examinations_paper
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from examinations_paper
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.xiaoyuan.model.ExaminationsPaper" >
-    insert into examinations_paper (Id, PaperName, PaperScore, 
-      ExaminationsId, SubjectsId, ImageUrl
+    insert into examinations_paper (id, paper_name, paper_score, 
+      examinations_id, subjects_id, image_url
       )
-    values (#{id,jdbcType=INTEGER}, #{papername,jdbcType=VARCHAR}, #{paperscore,jdbcType=INTEGER}, 
-      #{examinationsid,jdbcType=INTEGER}, #{subjectsid,jdbcType=INTEGER}, #{imageurl,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{paperName,jdbcType=VARCHAR}, #{paperScore,jdbcType=INTEGER}, 
+      #{examinationsId,jdbcType=INTEGER}, #{subjectsId,jdbcType=INTEGER}, #{imageUrl,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xiaoyuan.model.ExaminationsPaper" >
     insert into examinations_paper
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        Id,
+        id,
       </if>
-      <if test="papername != null" >
-        PaperName,
+      <if test="paperName != null" >
+        paper_name,
       </if>
-      <if test="paperscore != null" >
-        PaperScore,
+      <if test="paperScore != null" >
+        paper_score,
       </if>
-      <if test="examinationsid != null" >
-        ExaminationsId,
+      <if test="examinationsId != null" >
+        examinations_id,
       </if>
-      <if test="subjectsid != null" >
-        SubjectsId,
+      <if test="subjectsId != null" >
+        subjects_id,
       </if>
-      <if test="imageurl != null" >
-        ImageUrl,
+      <if test="imageUrl != null" >
+        image_url,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="papername != null" >
-        #{papername,jdbcType=VARCHAR},
+      <if test="paperName != null" >
+        #{paperName,jdbcType=VARCHAR},
       </if>
-      <if test="paperscore != null" >
-        #{paperscore,jdbcType=INTEGER},
+      <if test="paperScore != null" >
+        #{paperScore,jdbcType=INTEGER},
       </if>
-      <if test="examinationsid != null" >
-        #{examinationsid,jdbcType=INTEGER},
+      <if test="examinationsId != null" >
+        #{examinationsId,jdbcType=INTEGER},
       </if>
-      <if test="subjectsid != null" >
-        #{subjectsid,jdbcType=INTEGER},
+      <if test="subjectsId != null" >
+        #{subjectsId,jdbcType=INTEGER},
       </if>
-      <if test="imageurl != null" >
-        #{imageurl,jdbcType=VARCHAR},
+      <if test="imageUrl != null" >
+        #{imageUrl,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.ExaminationsPaper" >
     update examinations_paper
     <set >
-      <if test="papername != null" >
-        PaperName = #{papername,jdbcType=VARCHAR},
+      <if test="paperName != null" >
+        paper_name = #{paperName,jdbcType=VARCHAR},
       </if>
-      <if test="paperscore != null" >
-        PaperScore = #{paperscore,jdbcType=INTEGER},
+      <if test="paperScore != null" >
+        paper_score = #{paperScore,jdbcType=INTEGER},
       </if>
-      <if test="examinationsid != null" >
-        ExaminationsId = #{examinationsid,jdbcType=INTEGER},
+      <if test="examinationsId != null" >
+        examinations_id = #{examinationsId,jdbcType=INTEGER},
       </if>
-      <if test="subjectsid != null" >
-        SubjectsId = #{subjectsid,jdbcType=INTEGER},
+      <if test="subjectsId != null" >
+        subjects_id = #{subjectsId,jdbcType=INTEGER},
       </if>
-      <if test="imageurl != null" >
-        ImageUrl = #{imageurl,jdbcType=VARCHAR},
+      <if test="imageUrl != null" >
+        image_url = #{imageUrl,jdbcType=VARCHAR},
       </if>
     </set>
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.ExaminationsPaper" >
     update examinations_paper
-    set PaperName = #{papername,jdbcType=VARCHAR},
-      PaperScore = #{paperscore,jdbcType=INTEGER},
-      ExaminationsId = #{examinationsid,jdbcType=INTEGER},
-      SubjectsId = #{subjectsid,jdbcType=INTEGER},
-      ImageUrl = #{imageurl,jdbcType=VARCHAR}
-    where Id = #{id,jdbcType=INTEGER}
+    set paper_name = #{paperName,jdbcType=VARCHAR},
+      paper_score = #{paperScore,jdbcType=INTEGER},
+      examinations_id = #{examinationsId,jdbcType=INTEGER},
+      subjects_id = #{subjectsId,jdbcType=INTEGER},
+      image_url = #{imageUrl,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

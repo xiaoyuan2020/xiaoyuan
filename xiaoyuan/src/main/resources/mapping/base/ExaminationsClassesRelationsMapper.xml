@@ -2,70 +2,70 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xiaoyuan.mapper.ExaminationsClassesRelationsMapper" >
   <resultMap id="BaseResultMap" type="com.xiaoyuan.model.ExaminationsClassesRelations" >
-    <id column="Id" property="id" jdbcType="INTEGER" />
-    <result column="ExaminationsId" property="examinationsid" jdbcType="INTEGER" />
-    <result column="ClassId" property="classid" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="examinations_id" property="examinationsId" jdbcType="INTEGER" />
+    <result column="classes_id" property="classesId" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, ExaminationsId, ClassId
+    id, examinations_id, classes_id
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from examinations_classes_relations
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from examinations_classes_relations
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
-    insert into examinations_classes_relations (Id, ExaminationsId, ClassId
+    insert into examinations_classes_relations (id, examinations_id, classes_id
       )
-    values (#{id,jdbcType=INTEGER}, #{examinationsid,jdbcType=INTEGER}, #{classid,jdbcType=INTEGER}
+    values (#{id,jdbcType=INTEGER}, #{examinationsId,jdbcType=INTEGER}, #{classesId,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
     insert into examinations_classes_relations
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        Id,
+        id,
       </if>
-      <if test="examinationsid != null" >
-        ExaminationsId,
+      <if test="examinationsId != null" >
+        examinations_id,
       </if>
-      <if test="classid != null" >
-        ClassId,
+      <if test="classesId != null" >
+        classes_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="examinationsid != null" >
-        #{examinationsid,jdbcType=INTEGER},
+      <if test="examinationsId != null" >
+        #{examinationsId,jdbcType=INTEGER},
       </if>
-      <if test="classid != null" >
-        #{classid,jdbcType=INTEGER},
+      <if test="classesId != null" >
+        #{classesId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
     update examinations_classes_relations
     <set >
-      <if test="examinationsid != null" >
-        ExaminationsId = #{examinationsid,jdbcType=INTEGER},
+      <if test="examinationsId != null" >
+        examinations_id = #{examinationsId,jdbcType=INTEGER},
       </if>
-      <if test="classid != null" >
-        ClassId = #{classid,jdbcType=INTEGER},
+      <if test="classesId != null" >
+        classes_id = #{classesId,jdbcType=INTEGER},
       </if>
     </set>
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
     update examinations_classes_relations
-    set ExaminationsId = #{examinationsid,jdbcType=INTEGER},
-      ClassId = #{classid,jdbcType=INTEGER}
-    where Id = #{id,jdbcType=INTEGER}
+    set examinations_id = #{examinationsId,jdbcType=INTEGER},
+      classes_id = #{classesId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

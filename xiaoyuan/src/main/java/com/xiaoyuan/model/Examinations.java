@@ -7,9 +7,9 @@ public class Examinations {
 
     private String title;
 
-    private Date creattime;
+    private Date creatTime;
 
-    private Date examdate;
+    private Date examDate;
 
     public Integer getId() {
         return id;
@@ -27,19 +27,19 @@ public class Examinations {
         this.title = title == null ? null : title.trim();
     }
 
-    public Date getCreattime() {
-        return creattime;
+    public Date getCreatTime() {
+        return creatTime;
     }
 
-    public void setCreattime(Date creattime) {
-        this.creattime = creattime;
+    public void setCreatTime(Date creatTime) {
+        this.creatTime = creatTime;
     }
 
-    public Date getExamdate() {
-        return examdate;
+    public Date getExamDate() {
+        return examDate;
     }
 
-    public void setExamdate(Date examdate) {
-        this.examdate = examdate;
+    public void setExamDate(Date examDate) {
+        this.examDate = examDate;
     }
 }

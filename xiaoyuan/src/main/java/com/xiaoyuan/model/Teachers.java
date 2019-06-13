@@ -7,6 +7,10 @@ public class Teachers {
 
     private Integer type;
 
+    private Integer subjectsId;
+
+    private Integer schoolsId;
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +33,21 @@ public class Teachers {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public Integer getSubjectsId() {
+        return subjectsId;
+    }
+
+    public void setSubjectsId(Integer subjectsId) {
+        this.subjectsId = subjectsId;
+    }
+
+    public Integer getSchoolsId() {
+        return schoolsId;
+    }
+
+    public void setSchoolsId(Integer schoolsId) {
+        this.schoolsId = schoolsId;
     }
 }

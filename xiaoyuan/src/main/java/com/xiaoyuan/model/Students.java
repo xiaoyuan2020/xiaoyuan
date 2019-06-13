@@ -7,7 +7,7 @@ public class Students {
 
     private String chsi;
 
-    private Integer classid;
+    private Integer classesId;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class Students {
         this.chsi = chsi == null ? null : chsi.trim();
     }
 
-    public Integer getClassid() {
-        return classid;
+    public Integer getClassesId() {
+        return classesId;
     }
 
-    public void setClassid(Integer classid) {
-        this.classid = classid;
+    public void setClassesId(Integer classesId) {
+        this.classesId = classesId;
     }
 }

@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xiaoyuan.mapper.SchoolsMapper" >
   <resultMap id="BaseResultMap" type="com.xiaoyuan.model.Schools" >
-    <id column="Id" property="id" jdbcType="INTEGER" />
-    <result column="CTime" property="ctime" jdbcType="TIME" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="creat_time" property="creatTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.xiaoyuan.model.Schools" extends="BaseResultMap" >
-    <result column="Name" property="name" jdbcType="VARBINARY" />
+    <result column="name" property="name" jdbcType="VARBINARY" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, CTime
+    id, creat_time
   </sql>
   <sql id="Blob_Column_List" >
-    Name
+    name
   </sql>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
     select 
@@ -20,37 +20,37 @@
     ,
     <include refid="Blob_Column_List" />
     from schools
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from schools
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.xiaoyuan.model.Schools" >
-    insert into schools (Id, CTime, Name
+    insert into schools (id, creat_time, name
       )
-    values (#{id,jdbcType=INTEGER}, #{ctime,jdbcType=TIME}, #{name,jdbcType=VARBINARY}
+    values (#{id,jdbcType=INTEGER}, #{creatTime,jdbcType=TIMESTAMP}, #{name,jdbcType=VARBINARY}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xiaoyuan.model.Schools" >
     insert into schools
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        Id,
+        id,
       </if>
-      <if test="ctime != null" >
-        CTime,
+      <if test="creatTime != null" >
+        creat_time,
       </if>
       <if test="name != null" >
-        Name,
+        name,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="ctime != null" >
-        #{ctime,jdbcType=TIME},
+      <if test="creatTime != null" >
+        #{creatTime,jdbcType=TIMESTAMP},
       </if>
       <if test="name != null" >
         #{name,jdbcType=VARBINARY},
@@ -60,24 +60,24 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.Schools" >
     update schools
     <set >
-      <if test="ctime != null" >
-        CTime = #{ctime,jdbcType=TIME},
+      <if test="creatTime != null" >
+        creat_time = #{creatTime,jdbcType=TIMESTAMP},
       </if>
       <if test="name != null" >
-        Name = #{name,jdbcType=VARBINARY},
+        name = #{name,jdbcType=VARBINARY},
       </if>
     </set>
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.xiaoyuan.model.Schools" >
     update schools
-    set CTime = #{ctime,jdbcType=TIME},
-      Name = #{name,jdbcType=VARBINARY}
-    where Id = #{id,jdbcType=INTEGER}
+    set creat_time = #{creatTime,jdbcType=TIMESTAMP},
+      name = #{name,jdbcType=VARBINARY}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.Schools" >
     update schools
-    set CTime = #{ctime,jdbcType=TIME}
-    where Id = #{id,jdbcType=INTEGER}
+    set creat_time = #{creatTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

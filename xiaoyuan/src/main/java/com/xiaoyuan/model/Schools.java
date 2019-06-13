@@ -5,7 +5,7 @@ import java.util.Date;
 public class Schools {
     private Integer id;
 
-    private Date ctime;
+    private Date creatTime;
 
     private byte[] name;
 
@@ -17,12 +17,12 @@ public class Schools {
         this.id = id;
     }
 
-    public Date getCtime() {
-        return ctime;
+    public Date getCreatTime() {
+        return creatTime;
     }
 
-    public void setCtime(Date ctime) {
-        this.ctime = ctime;
+    public void setCreatTime(Date creatTime) {
+        this.creatTime = creatTime;
     }
 
     public byte[] getName() {

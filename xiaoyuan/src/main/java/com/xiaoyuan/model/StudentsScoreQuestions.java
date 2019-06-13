@@ -3,13 +3,13 @@ package com.xiaoyuan.model;
 public class StudentsScoreQuestions {
     private Integer id;
 
-    private Integer studentid;
+    private Integer studentsId;
 
-    private Integer paperid;
+    private Integer paperId;
 
-    private Integer questionid;
+    private Integer questionsId;
 
-    private Double questionscore;
+    private Double questionsScore;
 
     public Integer getId() {
         return id;
@@ -19,35 +19,35 @@ public class StudentsScoreQuestions {
         this.id = id;
     }
 
-    public Integer getStudentid() {
-        return studentid;
+    public Integer getStudentsId() {
+        return studentsId;
     }
 
-    public void setStudentid(Integer studentid) {
-        this.studentid = studentid;
+    public void setStudentsId(Integer studentsId) {
+        this.studentsId = studentsId;
     }
 
-    public Integer getPaperid() {
-        return paperid;
+    public Integer getPaperId() {
+        return paperId;
     }
 
-    public void setPaperid(Integer paperid) {
-        this.paperid = paperid;
+    public void setPaperId(Integer paperId) {
+        this.paperId = paperId;
     }
 
-    public Integer getQuestionid() {
-        return questionid;
+    public Integer getQuestionsId() {
+        return questionsId;
     }
 
-    public void setQuestionid(Integer questionid) {
-        this.questionid = questionid;
+    public void setQuestionsId(Integer questionsId) {
+        this.questionsId = questionsId;
     }
 
-    public Double getQuestionscore() {
-        return questionscore;
+    public Double getQuestionsScore() {
+        return questionsScore;
     }
 
-    public void setQuestionscore(Double questionscore) {
-        this.questionscore = questionscore;
+    public void setQuestionsScore(Double questionsScore) {
+        this.questionsScore = questionsScore;
     }
 }

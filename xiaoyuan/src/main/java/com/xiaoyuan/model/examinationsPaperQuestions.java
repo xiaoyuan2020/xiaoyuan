@@ -3,15 +3,15 @@ package com.xiaoyuan.model;
 public class examinationsPaperQuestions {
     private Integer id;
 
-    private Integer paperid;
+    private Integer paperId;
 
     private String title;
 
-    private String questioncode;
+    private String questionCode;
 
     private String answer;
 
-    private Double questionscore;
+    private Double questionScore;
 
     public Integer getId() {
         return id;
@@ -21,12 +21,12 @@ public class examinationsPaperQuestions {
         this.id = id;
     }
 
-    public Integer getPaperid() {
-        return paperid;
+    public Integer getPaperId() {
+        return paperId;
     }
 
-    public void setPaperid(Integer paperid) {
-        this.paperid = paperid;
+    public void setPaperId(Integer paperId) {
+        this.paperId = paperId;
     }
 
     public String getTitle() {
@@ -37,12 +37,12 @@ public class examinationsPaperQuestions {
         this.title = title == null ? null : title.trim();
     }
 
-    public String getQuestioncode() {
-        return questioncode;
+    public String getQuestionCode() {
+        return questionCode;
     }
 
-    public void setQuestioncode(String questioncode) {
-        this.questioncode = questioncode == null ? null : questioncode.trim();
+    public void setQuestionCode(String questionCode) {
+        this.questionCode = questionCode == null ? null : questionCode.trim();
     }
 
     public String getAnswer() {
@@ -53,11 +53,11 @@ public class examinationsPaperQuestions {
         this.answer = answer == null ? null : answer.trim();
     }
 
-    public Double getQuestionscore() {
-        return questionscore;
+    public Double getQuestionScore() {
+        return questionScore;
     }
 
-    public void setQuestionscore(Double questionscore) {
-        this.questionscore = questionscore;
+    public void setQuestionScore(Double questionScore) {
+        this.questionScore = questionScore;
     }
 }

@@ -2,105 +2,105 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xiaoyuan.mapper.examinationsPaperQuestionsMapper" >
   <resultMap id="BaseResultMap" type="com.xiaoyuan.model.examinationsPaperQuestions" >
-    <id column="Id" property="id" jdbcType="INTEGER" />
-    <result column="PaperId" property="paperid" jdbcType="INTEGER" />
-    <result column="Title" property="title" jdbcType="VARCHAR" />
-    <result column="QuestionCode" property="questioncode" jdbcType="VARCHAR" />
-    <result column="Answer" property="answer" jdbcType="VARCHAR" />
-    <result column="QuestionScore" property="questionscore" jdbcType="DOUBLE" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="paper_id" property="paperId" jdbcType="INTEGER" />
+    <result column="title" property="title" jdbcType="VARCHAR" />
+    <result column="question_code" property="questionCode" jdbcType="VARCHAR" />
+    <result column="answer" property="answer" jdbcType="VARCHAR" />
+    <result column="question_score" property="questionScore" jdbcType="DOUBLE" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, PaperId, Title, QuestionCode, Answer, QuestionScore
+    id, paper_id, title, question_code, answer, question_score
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from examinations_paper_questions
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from examinations_paper_questions
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.xiaoyuan.model.examinationsPaperQuestions" >
-    insert into examinations_paper_questions (Id, PaperId, Title, 
-      QuestionCode, Answer, QuestionScore
+    insert into examinations_paper_questions (id, paper_id, title, 
+      question_code, answer, question_score
       )
-    values (#{id,jdbcType=INTEGER}, #{paperid,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
-      #{questioncode,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{questionscore,jdbcType=DOUBLE}
+    values (#{id,jdbcType=INTEGER}, #{paperId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, 
+      #{questionCode,jdbcType=VARCHAR}, #{answer,jdbcType=VARCHAR}, #{questionScore,jdbcType=DOUBLE}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.xiaoyuan.model.examinationsPaperQuestions" >
     insert into examinations_paper_questions
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        Id,
+        id,
       </if>
-      <if test="paperid != null" >
-        PaperId,
+      <if test="paperId != null" >
+        paper_id,
       </if>
       <if test="title != null" >
-        Title,
+        title,
       </if>
-      <if test="questioncode != null" >
-        QuestionCode,
+      <if test="questionCode != null" >
+        question_code,
       </if>
       <if test="answer != null" >
-        Answer,
+        answer,
       </if>
-      <if test="questionscore != null" >
-        QuestionScore,
+      <if test="questionScore != null" >
+        question_score,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="paperid != null" >
-        #{paperid,jdbcType=INTEGER},
+      <if test="paperId != null" >
+        #{paperId,jdbcType=INTEGER},
       </if>
       <if test="title != null" >
         #{title,jdbcType=VARCHAR},
       </if>
-      <if test="questioncode != null" >
-        #{questioncode,jdbcType=VARCHAR},
+      <if test="questionCode != null" >
+        #{questionCode,jdbcType=VARCHAR},
       </if>
       <if test="answer != null" >
         #{answer,jdbcType=VARCHAR},
       </if>
-      <if test="questionscore != null" >
-        #{questionscore,jdbcType=DOUBLE},
+      <if test="questionScore != null" >
+        #{questionScore,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.examinationsPaperQuestions" >
     update examinations_paper_questions
     <set >
-      <if test="paperid != null" >
-        PaperId = #{paperid,jdbcType=INTEGER},
+      <if test="paperId != null" >
+        paper_id = #{paperId,jdbcType=INTEGER},
       </if>
       <if test="title != null" >
-        Title = #{title,jdbcType=VARCHAR},
+        title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="questioncode != null" >
-        QuestionCode = #{questioncode,jdbcType=VARCHAR},
+      <if test="questionCode != null" >
+        question_code = #{questionCode,jdbcType=VARCHAR},
       </if>
       <if test="answer != null" >
-        Answer = #{answer,jdbcType=VARCHAR},
+        answer = #{answer,jdbcType=VARCHAR},
       </if>
-      <if test="questionscore != null" >
-        QuestionScore = #{questionscore,jdbcType=DOUBLE},
+      <if test="questionScore != null" >
+        question_score = #{questionScore,jdbcType=DOUBLE},
       </if>
     </set>
-    where Id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.examinationsPaperQuestions" >
     update examinations_paper_questions
-    set PaperId = #{paperid,jdbcType=INTEGER},
-      Title = #{title,jdbcType=VARCHAR},
-      QuestionCode = #{questioncode,jdbcType=VARCHAR},
-      Answer = #{answer,jdbcType=VARCHAR},
-      QuestionScore = #{questionscore,jdbcType=DOUBLE}
-    where Id = #{id,jdbcType=INTEGER}
+    set paper_id = #{paperId,jdbcType=INTEGER},
+      title = #{title,jdbcType=VARCHAR},
+      question_code = #{questionCode,jdbcType=VARCHAR},
+      answer = #{answer,jdbcType=VARCHAR},
+      question_score = #{questionScore,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
