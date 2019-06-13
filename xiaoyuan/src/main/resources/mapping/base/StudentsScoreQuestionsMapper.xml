@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoyuan.mapper.StudentsScoreQuestionsMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoyuan.model.StudentsScoreQuestions" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="StudentId" property="studentid" jdbcType="INTEGER" />
+    <result column="PaperId" property="paperid" jdbcType="INTEGER" />
+    <result column="QuestionId" property="questionid" jdbcType="INTEGER" />
+    <result column="QuestionScore" property="questionscore" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, StudentId, PaperId, QuestionId, QuestionScore
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from students_score_questions
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from students_score_questions
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoyuan.model.StudentsScoreQuestions" >
+    insert into students_score_questions (Id, StudentId, PaperId, 
+      QuestionId, QuestionScore)
+    values (#{id,jdbcType=INTEGER}, #{studentid,jdbcType=INTEGER}, #{paperid,jdbcType=INTEGER}, 
+      #{questionid,jdbcType=INTEGER}, #{questionscore,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoyuan.model.StudentsScoreQuestions" >
+    insert into students_score_questions
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="studentid != null" >
+        StudentId,
+      </if>
+      <if test="paperid != null" >
+        PaperId,
+      </if>
+      <if test="questionid != null" >
+        QuestionId,
+      </if>
+      <if test="questionscore != null" >
+        QuestionScore,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentid != null" >
+        #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="paperid != null" >
+        #{paperid,jdbcType=INTEGER},
+      </if>
+      <if test="questionid != null" >
+        #{questionid,jdbcType=INTEGER},
+      </if>
+      <if test="questionscore != null" >
+        #{questionscore,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.StudentsScoreQuestions" >
+    update students_score_questions
+    <set >
+      <if test="studentid != null" >
+        StudentId = #{studentid,jdbcType=INTEGER},
+      </if>
+      <if test="paperid != null" >
+        PaperId = #{paperid,jdbcType=INTEGER},
+      </if>
+      <if test="questionid != null" >
+        QuestionId = #{questionid,jdbcType=INTEGER},
+      </if>
+      <if test="questionscore != null" >
+        QuestionScore = #{questionscore,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.StudentsScoreQuestions" >
+    update students_score_questions
+    set StudentId = #{studentid,jdbcType=INTEGER},
+      PaperId = #{paperid,jdbcType=INTEGER},
+      QuestionId = #{questionid,jdbcType=INTEGER},
+      QuestionScore = #{questionscore,jdbcType=DOUBLE}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

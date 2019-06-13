@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoyuan.mapper.ExaminationsClassesRelationsMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoyuan.model.ExaminationsClassesRelations" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="ExaminationsId" property="examinationsid" jdbcType="INTEGER" />
+    <result column="ClassId" property="classid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, ExaminationsId, ClassId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from examinations_classes_relations
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from examinations_classes_relations
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
+    insert into examinations_classes_relations (Id, ExaminationsId, ClassId
+      )
+    values (#{id,jdbcType=INTEGER}, #{examinationsid,jdbcType=INTEGER}, #{classid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
+    insert into examinations_classes_relations
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="examinationsid != null" >
+        ExaminationsId,
+      </if>
+      <if test="classid != null" >
+        ClassId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="examinationsid != null" >
+        #{examinationsid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null" >
+        #{classid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
+    update examinations_classes_relations
+    <set >
+      <if test="examinationsid != null" >
+        ExaminationsId = #{examinationsid,jdbcType=INTEGER},
+      </if>
+      <if test="classid != null" >
+        ClassId = #{classid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.ExaminationsClassesRelations" >
+    update examinations_classes_relations
+    set ExaminationsId = #{examinationsid,jdbcType=INTEGER},
+      ClassId = #{classid,jdbcType=INTEGER}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

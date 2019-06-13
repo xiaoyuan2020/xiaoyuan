@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaoyuan.mapper.ClassesMapper" >
+  <resultMap id="BaseResultMap" type="com.xiaoyuan.model.Classes" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="Name" property="name" jdbcType="VARCHAR" />
+    <result column="SchoolsId" property="schoolsid" jdbcType="INTEGER" />
+    <result column="SchoolYear" property="schoolyear" jdbcType="INTEGER" />
+    <result column="Grade" property="grade" jdbcType="INTEGER" />
+    <result column="CreateTime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="CreateUId" property="createuid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, Name, SchoolsId, SchoolYear, Grade, CreateTime, CreateUId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from classes
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from classes
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiaoyuan.model.Classes" >
+    insert into classes (Id, Name, SchoolsId, 
+      SchoolYear, Grade, CreateTime, 
+      CreateUId)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{schoolsid,jdbcType=INTEGER}, 
+      #{schoolyear,jdbcType=INTEGER}, #{grade,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{createuid,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiaoyuan.model.Classes" >
+    insert into classes
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="name != null" >
+        Name,
+      </if>
+      <if test="schoolsid != null" >
+        SchoolsId,
+      </if>
+      <if test="schoolyear != null" >
+        SchoolYear,
+      </if>
+      <if test="grade != null" >
+        Grade,
+      </if>
+      <if test="createtime != null" >
+        CreateTime,
+      </if>
+      <if test="createuid != null" >
+        CreateUId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolsid != null" >
+        #{schoolsid,jdbcType=INTEGER},
+      </if>
+      <if test="schoolyear != null" >
+        #{schoolyear,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuid != null" >
+        #{createuid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiaoyuan.model.Classes" >
+    update classes
+    <set >
+      <if test="name != null" >
+        Name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolsid != null" >
+        SchoolsId = #{schoolsid,jdbcType=INTEGER},
+      </if>
+      <if test="schoolyear != null" >
+        SchoolYear = #{schoolyear,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        Grade = #{grade,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null" >
+        CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createuid != null" >
+        CreateUId = #{createuid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiaoyuan.model.Classes" >
+    update classes
+    set Name = #{name,jdbcType=VARCHAR},
+      SchoolsId = #{schoolsid,jdbcType=INTEGER},
+      SchoolYear = #{schoolyear,jdbcType=INTEGER},
+      Grade = #{grade,jdbcType=INTEGER},
+      CreateTime = #{createtime,jdbcType=TIMESTAMP},
+      CreateUId = #{createuid,jdbcType=INTEGER}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
